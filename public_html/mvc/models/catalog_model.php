@@ -6,3 +6,4 @@ class Catalog_Model extends Model {
 		parent:: __construct();
 	}
 }
+

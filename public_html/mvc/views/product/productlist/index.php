@@ -2,7 +2,7 @@
 
 <?php 
 
-echo 'View Catalog -> Showlist <br/>';
+echo 'View Catalog -> productlist <br/>';
 print_r($args);
 
 ?>

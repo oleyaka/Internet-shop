@@ -1,16 +1,25 @@
 <?php 
 
 class App {
+
+	private $isAssets = false;
 	public function __construct() {
+
+        session_start();
 
 		if (isset($_GET['url'])) {
 			$url = explode('/', rtrim($_GET['url'], '/'));
 		} else {
 			$url[0] = 'index';
 		}
-
-		$fileName = 'controllers/' . $url[0] . '.php';
-		if (file_exists($fileName)) {
+		if ($url[0] == 'public'){
+			$fileName = $url[0] . '/' . $url[1] . '/' . $url[2];
+			$isAssets = true ;
+		} else{
+			$fileName = 'controllers/' . $url[0] . '.php';
+		}
+		// echo $fileName;
+		if (file_exists($fileName) && !$isAssets ) {
 			/* подключение контроллера */
 			require_once $fileName;
 			$controller = new $url[0];
@@ -26,12 +35,15 @@ class App {
 				} else {
 					echo 'Error method dose not exists';
 				}
+				
 			} else {
 				$controller -> index();
 			}
 
-		} else {
+		} else if (!file_exists($fileName)){
 			echo 'Error file done not exists';
+		}else if (file_exists($fileName) && $isAssets){
+			include $fileName;
 		}
 	}
 }

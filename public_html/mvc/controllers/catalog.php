@@ -12,7 +12,7 @@ class Catalog extends Controller {
 		if ($section != '') {
 
 		}
-
-		$this -> view -> render(strtolower(get_class($this)) . '/showlist');
+		$args = 123;
+		$this -> view -> render(strtolower(get_class($this)) . '/showlist', $args);
 	}
 }
