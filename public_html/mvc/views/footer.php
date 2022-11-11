@@ -1,4 +1,9 @@
+			</div>
 		</div>
-		<div id="footer">Реализация MVC</div>
+		<div id="footer">
+			<div class="container">
+				Реализация MVC
+			</div>
+		</div>
 	</body>
 </html>

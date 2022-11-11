@@ -3,28 +3,44 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<style><? require_once 'public/style/style.css'; ?></style>
-	<!-- <link rel="stylesheet" type="text/css" href="/public_html/mvc/public/style/style.css" . <? rand(100, 1000)?>> -->
-	<script type="text/javascript" src="/public_html/mvc/public/js/jquery.js"></script>
-	<script type="text/javascript" src="/public_html/mvc/public/js/custom.js"></script>
+
+	<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+	<script type="text/javascript" src="/public_html/mvc/public/js/jquery.js?<?= rand(100, 1000)?>"></script>
+
 	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="	sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+	<script type="text/javascript" src="/public_html/mvc/public/js/custom.js?<?= rand(100, 1000)?>"></script>
+
+	<style><? require_once 'public/style/style.css'; ?></style>
+
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 	<title>Title</title>
 </head>
 <body>
 
 	<div id="header">
-		<a href="<?=BASE_DIR?>/index/">Главная</a>
-		<a href="<?=BASE_DIR?>/catalog/">Каталог</a>
-		<? if (User::isLogin()) { ?>
-			<a href="<?=BASE_DIR?>/login/logout/">Выйти</a>
-			<a href="<?=BASE_DIR?>/account/">Аккаунт</a>
-		<? } else { ?>
-			<a href="<?=BASE_DIR?>/login/">Войти</a>
-		<? } ?>
+		<div class="container">
+			<div class="row">
+				<a href="<?=BASE_DIR?>/index/" class="col-3 h3">Главная</a>
+				<a href="<?=BASE_DIR?>/catalog/" class="col-3 h3">Каталог</a>
+				<? if (User::isLogin()) { ?>
+					<a href="<?=BASE_DIR?>/account/" class="col-3 h3">Аккаунт</a>
+				<? } ?>
+				<? if (User::isLogin()) { ?>
+					<a href="<?=BASE_DIR?>/login/logout/" class="col-3 h3">Выйти</a>					
+				<? } else { ?>
+					<a href="<?=BASE_DIR?>/login/" class="col-3 h3">Войти</a>
+				<? } ?>
+			</div>
+			
+		</div>
 	</div>
 
 	<div id="main_container">
+		<div class="container">
 		
 	

@@ -1,7 +1,7 @@
 <? require_once $_SERVER['DOCUMENT_ROOT'] . '/public_html/mvc/views/header.php'?>
 
 <h1>
-	Hello, <?=User::getName()?>
+	Hello, <?=User::getName() ?>! <?= isset($this -> arResult["NEW_USER"]) && $this -> arResult["NEW_USER"] ? 'Вы зареганы' : ''?>
 </h1>
 
 <?php 

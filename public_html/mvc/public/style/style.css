@@ -5,6 +5,7 @@ body {
 #header {
 	background-color: pink;
 	padding: 20px;
+	text-align: center;
 }
 
 #footer {
@@ -18,7 +19,49 @@ body {
 	padding: 20px;
 }
 
+a {
+	color: black;
+	text-decoration: none;
+}
+
+a:hover {
+	color: black;
+	text-decoration: none;
+	font-weight: bold;
+}
 
 .error {
 	color: red;
 }
+
+.form_input {
+	width: 200px;
+	outline: none;
+}
+
+.form_btn {
+	background-color: pink;
+	border: 2px solid pink;
+	color: black;
+	height: 35px;
+	width: 200px;
+	border-radius: 10px;
+}
+
+.form_btn:hover {
+	background-color: pink;
+	border: 1px solid black;
+	color: black;
+}
+
+.error_input {
+	border-color: red;
+}
+
+.complet_input {
+	border-color: green;
+}
+
+.block_error, .pass_error, .login_error {
+	display: none;
+} 
